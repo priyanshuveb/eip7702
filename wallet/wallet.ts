@@ -83,7 +83,17 @@ try {
     maxPriorityFeePerGas
   });
 
-  console.log({ userOperationHash });
+  console.log("UserOperation Hash:", userOperationHash);
+
+  // Wait for the user operation to be included in a block
+  const receipt = await bundlerClient.waitForUserOperationReceipt({
+    hash: userOperationHash,
+  });
+
+  console.log("Transaction Hash:", receipt.receipt.transactionHash);
+  console.log("Block Number:", receipt.receipt.blockNumber);
+
 } catch (error) {
   console.error("Error sending UserOperation:", error);
 }
+
