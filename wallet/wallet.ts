@@ -46,12 +46,12 @@ const authorization = await walletClient.signAuthorization({
   executor: "self", 
 });
 
-// const hash = await walletClient.sendTransaction({ 
-//   authorizationList: [authorization], 
-//   data: "0x", 
-//   to: zeroAddress, 
-// });
-// console.log({hash});
+const hash = await walletClient.sendTransaction({ 
+  authorizationList: [authorization], 
+  data: "0x", 
+  to: zeroAddress, 
+});
+console.log({hash});
 
 
 const smartAccount = await toMetaMaskSmartAccount({
