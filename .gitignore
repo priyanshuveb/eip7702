@@ -1,0 +1,9 @@
+/wallet/node_modules
+/wallet/dist
+/wallet/build
+/wallet/.env
+/contract/lib
+/contract/cache
+/contract/out
+/contract/broadcast/*/
+/contract/.env
